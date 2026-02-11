@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirect</title>
+  </head>
+  <body>
+    <script>
+      (function () {
+        const path = window.location.pathname;
+        const base = path.split('/')[1];
+        const target = `${window.location.origin}/${base}/?p=${encodeURIComponent(path + window.location.search + window.location.hash)}`;
+        window.location.replace(target);
+      })();
+    </script>
+  </body>
+</html>
